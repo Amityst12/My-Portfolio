@@ -1,4 +1,6 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+
+
 export const Home = () => {
     return (
         <section 
@@ -16,6 +18,13 @@ export const Home = () => {
                     I'm a passionate software developer and computer science student with a deep love for building things that make an impact. full-stack applications, improving my problem-solving skills, or crafting beautiful front-end experiences — I’m always learning and improving. <br /><br />
                     Outside of tech, you'll probably find me at the gym, training hard and pushing my limits. I'm also a huge fan of gaming, anime, and constantly exploring new ideas in design and tech.
                 </p>
+
+                {/*Picture*/}
+                <img
+                src="/src/assets/mepic.jfif"
+                alt="Amit Yehoshaphat"
+                className="w-85 h-85 rounded-full mx-auto mb-8 shadow-lg border border-white/24 hover:scale-101 transition-transform duration-300"
+                />
 
 
                 {/*Buttons */}
