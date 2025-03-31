@@ -22,7 +22,7 @@ export const Projects = () => {
                         Includes a user-friendly interface within Discord for real-time feedback, insights, and match history summaries.
                         </p>
                     <div className="flex flex-wrap gap-2 mb-2"> 
-                        {["Requests", "API" , "Machine Learning", "UI", "Python",].map((items,key)=>(
+                        {["Requests", "API" , "ML", "UI", "Python",].map((items,key)=>(
                             <span
                             key = {key} 
                             className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm
