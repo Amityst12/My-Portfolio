@@ -40,7 +40,7 @@ html,body{
 
 .reveal{
   opacity: 0;
-  transform: translateX(-400px) translateY(10px) scale(0.95);
+  transform: translateX(-70%) translateY(-10%) scale(0.95);
   filter: blur(3px);
   transition: all 1.0s cubic-bezier(0.25, 0.8, 0.25, 1);
 
@@ -49,5 +49,5 @@ html,body{
 .reveal.visible{
   opacity:1;
   filter: blur(0px);
-  transform : translateX(0) scale(1) translateY(0px);
+  transform : translateX(0) scale(1) translateY(0);
 }
