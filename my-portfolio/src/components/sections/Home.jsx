@@ -1,5 +1,9 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
+const imageSrc =
+  import.meta.env.DEV
+    ? "/mepic.png"
+    : "/My-Portfolio/mepic.png";
 
 export const Home = () => {
     return (
@@ -22,7 +26,7 @@ export const Home = () => {
 
                 {/*Picture*/}
                 <img
-                src={`${import.meta.env.BASE_URL}mepic.png`}
+                src={`${import.meta.env.BASE_URL}/mepic.png`}
                 alt="Profile Photo"
                 className="w-82 h-82 rounded-full mx-auto mb-8 shadow-lg border border-white/24 hover:scale-101 transition-transform duration-300"
                 />
