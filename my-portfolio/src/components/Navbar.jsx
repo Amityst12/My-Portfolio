@@ -15,9 +15,13 @@ export const Navbar= ({menuOpen, setMenuOpen}) =>{
                     {"<"}Amit<span className="text-blue-500">.Yehoshaphat{">"}</span> 
                     </a>
 
-                    <div className="w-7 h-5 relative cursor-pointer z-40 md:hidden" onClick={() => setMenuOpen((prev) => !prev )}>
-                        &#9776;
-                    </div>
+                    <button
+                        className="w-7 h-5 relative cursor-pointer z-40 md:hidden text-white text-2xl"
+                        aria-label="Toggle menu"
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                        >
+                         &#9776;
+                    </button>
 
                     
                     <div className="hidden md:flex items-center space-x-8">

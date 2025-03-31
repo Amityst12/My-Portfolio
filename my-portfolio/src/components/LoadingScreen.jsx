@@ -7,7 +7,7 @@ export const LoadingScreen = ( {onComplete} ) => { //Make loading animation
     useEffect(() =>{ //Set interval
         let index = 0;
         const interval = setInterval(() => {
-            setText(fullText.substring(0, index));
+            setText(fullText.substring(0, index +1));
             index++; // Increace letter
 
             if(index> fullText.length){
