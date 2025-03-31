@@ -43,7 +43,12 @@ html,body{
   transform: translateX(-70%) translateY(-10%) scale(0.95);
   filter: blur(3px);
   transition: all 1.0s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(30px) scale(0.97);
+  }
 }
 
 .reveal.visible{
