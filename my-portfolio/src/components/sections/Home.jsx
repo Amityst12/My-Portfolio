@@ -21,8 +21,8 @@ export const Home = () => {
 
                 {/*Picture*/}
                 <img
-                src="/src/assets/mepic.jfif"
-                alt="Amit Yehoshaphat"
+                src= {'/src/assets/logo.png'}
+                alt="ME"
                 className="w-85 h-85 rounded-full mx-auto mb-8 shadow-lg border border-white/24 hover:scale-101 transition-transform duration-300"
                 />
 

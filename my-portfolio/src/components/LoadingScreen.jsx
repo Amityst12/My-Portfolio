@@ -27,7 +27,7 @@ export const LoadingScreen = ( {onComplete} ) => { //Make loading animation
         
         //LOADING BAR SETTINGS:
      <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
-        <div className="mb-4 text-4xl font-mono font-bold mx-auto">
+        <div className="mb-4 text-[2.125rem] font-mono font-bold mx-auto">
             {text} <span className="animate-blink ml-1">| </span> 
         </div>
 
