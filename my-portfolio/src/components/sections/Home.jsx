@@ -22,7 +22,7 @@ export const Home = () => {
 
                 {/*Picture*/}
                 <img
-                src= "./My-Portfolio/mepic.png"
+                src={`${import.meta.env.BASE_URL}mepic.png`}
                 alt="Profile Photo"
                 className="w-82 h-82 rounded-full mx-auto mb-8 shadow-lg border border-white/24 hover:scale-101 transition-transform duration-300"
                 />
