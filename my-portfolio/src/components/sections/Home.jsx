@@ -20,16 +20,31 @@ export const Home = () => {
                 </h1>
 
                 <p className="text-gray-100 text-lg max-w-2xl mx-auto text-center mb-8">
-                    I'm a passionate software developer and computer science student with a deep love for building things that make an impact - whether it's full-stack applications, solving complex problems, or crafting beautiful front-end experiences — I’m always learning and improving. <br /><br />
-                    Outside of tech, you'll probably find me at the gym, training hard and pushing my limits. I'm also a huge fan of gaming, anime, and constantly exploring new ideas in design and tech.
+                    I'm a <span className="text-blue-400 font-semibold"> full-stack developer</span> and 
+                    <span className="text-blue-400 font-semibold"> computer science student</span> who loves building 
+                    <span className="text-blue-400 font-semibold"> impactful software</span>.
+                    Whether it's crafting elegant UIs, solving deep technical challenges, or learning something new — 
+                    I'm always improving.
+                    <br /><br />
+                    Outside of tech, you'll find me 
+                    <span className="text-blue-400 font-semibold"> pushing limits at the gym</span>, diving into 
+                    <span className="text-blue-400 font-semibold"> gaming & anime</span>, exploring 
+                    <span className="text-blue-400 font-semibold"> creative ideas</span> in design and tech.
                 </p>
-
+                <RevealOnScroll>
                 {/*Picture*/}
-                <img
-                src={`${import.meta.env.BASE_URL}/mepic.png`}
-                alt="Profile Photo"
-                className="w-82 h-82 rounded-full mx-auto mb-8 shadow-lg border border-white/24 hover:scale-101 transition-transform duration-300"
-                />
+                <picture>
+                    <source srcSet={`${import.meta.env.BASE_URL}/mepic_retina_2048.webp`} type="image/webp" />
+                    <source srcSet={`${import.meta.env.BASE_URL}/mepic_retina_2048.png`} type="image/png" />
+                    <img
+                        src={`${import.meta.env.BASE_URL}/mepic_retina_2048.png`}
+                        alt="Amit Yehoshaphat – Profile"
+                        className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover rounded-full mx-auto mb-8 shadow-lg border border-white/24"
+                        width="256"
+                        height="256"
+                    />  
+                </picture>
+                </RevealOnScroll>
 
 
                 {/*Buttons */}

@@ -3,10 +3,10 @@ import { RevealOnScroll } from "../RevealOnScroll";
 export const About = () =>{
 
     const frontendSkills = ["React", "JavaScript", "TailwindCSS","HTML"];
-    const backendSkills = ["JSON","SQL","Basic Node.js","Python","Rest APIs"];
+    const backendSkills = ["JSON","SQL","Basic Node.js","Python","Rest APIs","Emailjs"];
     const otherSkills = ["GitHub","VS code","Deubgging","Problem Solving","Object-Oriented Programming"];
     const Hobbies = ["Working out", "Reading","Gaming","Building","Overcoming challenges","Collecting"];
-    const Courses = ["OOP", "Data Structures", "Data Systems","Data Science","C","OS", "Computer Networking","ML","Software Engineering"];
+    const Courses = ["OOP", "Data Structures", "Data Systems","Data Science","C","OS","ML", "Computer Networking","Software Engineering"];
     
     return(
         <section id="about" className="min-h-screen flex items-center justify-center py-20">
