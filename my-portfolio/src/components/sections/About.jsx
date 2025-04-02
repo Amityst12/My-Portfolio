@@ -9,7 +9,7 @@ export const About = () =>{
     const Courses = ["OOP", "Data Structures", "Data Systems","Data Science","C","OS","ML", "Computer Networking","Software Engineering"];
     
     return(
-        <section id="about" className="min-h-screen flex items-center justify-center py-20">
+        <section id="about" className="min-h-screen flex items-center justify-center py-15">
             <RevealOnScroll>
             <div className="max-w-3xl mx-auto px-4">
                 <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
@@ -21,7 +21,7 @@ export const About = () =>{
                     </p>
 
                     {/* Arrays grid here*/}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                             <h3 className="text-xl font-bold mb-4">
                                 Frontend:
