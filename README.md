@@ -35,6 +35,9 @@ This is a fully responsive, animated and modern portfolio built using **React + 
 |--------|------|-------------|
 | 🤖 Discord Bot | Python, API, ML | Self-analyzing TFT bot with Riot API and smart performance tracking |
 | 🎮 2D Shooter Game | Pygame, OOP | Top-down arcade shooter with smooth controls and enemy AI |
+| 🖥 Portfolio website | React, TailwindCSS, EmailJS, JS, Vite | A responsive developer portfolio to showcase skills, projects, and contact integration |
+| 💡 Promptify | React, TailwindCSS, OpenAI API, Vite | A smart prompt enhancer that rewrites vague or short prompts into clear, detailed instructions for better AI results |
+
 
 More to come soon! 🚀
 
