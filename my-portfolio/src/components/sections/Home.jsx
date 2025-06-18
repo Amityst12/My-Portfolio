@@ -1,10 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
-const imageSrc =
-  import.meta.env.DEV
-    ? "/mepic.png"
-    : "/My-Portfolio/mepic.png";
-
 export const Home = () => {
     return (
         <section 
@@ -37,12 +32,12 @@ export const Home = () => {
                     <source srcSet={`${import.meta.env.BASE_URL}/mepic_retina_2048.webp`} type="image/webp" />
                     <source srcSet={`${import.meta.env.BASE_URL}/mepic_retina_2048.png`} type="image/png" />
                     <img
-                        src={`${import.meta.env.BASE_URL}/mepic_retina_2048.png`}
+                        src={`${import.meta.env.BASE_URL}/mepic_retina_2048.webp`}
                         alt="Amit Yehoshaphat – Profile"
                         className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover rounded-full mx-auto mb-8 shadow-lg border border-white/24"
                         width="256"
                         height="256"
-                    />  
+                    />
                 </picture>
                 </RevealOnScroll>
 
