@@ -13,9 +13,21 @@ export const useTheme = () => {
     const classList = document.documentElement.classList;
     const meta = document.querySelector('meta[name="color-scheme"]');
 
-    if (darkMode) {
-      classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      meta && meta.setAttribute('content', 'dark light');
+      meta && meta.setAttribute('content', 'light dark');
+    if (mq.addEventListener) {
+      mq.addEventListener('change', handle);
+    } else {
+      mq.addListener(handle);
+    }
+
+    return () => {
+      if (mq.removeEventListener) {
+        mq.removeEventListener('change', handle);
+      } else {
+        mq.removeListener(handle);
+      }
+    };
       meta?.setAttribute('content', 'dark light');
     } else {
       classList.remove('dark');

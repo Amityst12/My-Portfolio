@@ -11,16 +11,32 @@
     <meta name="color-scheme" content="light dark" />
     <title>Amit's Portfolio</title>
     <script>
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const useDark = saved === 'dark' || (!saved && prefersDark);
-      const meta = document.querySelector('meta[name="color-scheme"]');
-      if (useDark) {
-        document.documentElement.classList.add('dark');
-        meta?.setAttribute('content', 'dark light');
-      } else {
-        meta?.setAttribute('content', 'light dark');
-      }
+      (() => {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const useDark = saved ? saved === 'dark' : prefersDark;
+        const meta = document.querySelector('meta[name="color-scheme"]');
+
+        if (useDark) {
+          document.documentElement.classList.add('dark');
+          meta && meta.setAttribute('content', 'dark light');
+        } else {
+          meta && meta.setAttribute('content', 'light dark');
+        }
+
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        const handle = (e) => {
+          if (localStorage.getItem('theme')) return;
+          document.documentElement.classList.toggle('dark', e.matches);
+          meta && meta.setAttribute('content', e.matches ? 'dark light' : 'light dark');
+        };
+
+        if (mq.addEventListener) {
+          mq.addEventListener('change', handle);
+        } else {
+          mq.addListener(handle);
+        }
+      })();
     </script>
   </head>
   <body>

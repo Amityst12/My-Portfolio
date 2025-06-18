@@ -26,7 +26,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     </button>
 
                     <button
-                        onClick={() => setDarkMode(!darkMode)}
+                        onClick={() => setDarkMode((prev) => !prev)}
                         aria-label="Toggle theme"
                         className={`ml-4 w-12 h-6 flex items-center rounded-full p-1 transition-colors ${darkMode ? 'bg-yellow-400' : 'bg-gray-300'}`}
                     >
