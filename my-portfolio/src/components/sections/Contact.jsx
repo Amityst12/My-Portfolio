@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
+import { RevealOnScroll } from "../RevealOnScroll"
+import emailjs from "emailjs-com"
 
 export const Contact =() =>{
     const [formData, setFormData] = useState({
@@ -10,26 +11,25 @@ export const Contact =() =>{
 
     const [sending, setSending] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) =>{
+        //e = INFORMATION
         e.preventDefault();
 
         setSending(true);
 
-        const emailjs = (await import('emailjs-com')).default;
-
         emailjs
-            .sendForm(
-                import.meta.env.VITE_SERVICE_ID,
-                import.meta.env.VITE_TEMPLATE_ID,
-                e.target,
-                import.meta.env.VITE_PUBLIC_KEY,
-            )
-            .then(() => {
-                alert('Message Sent!');
-                setFormData({ name: '', email: '', message: '' });
-            })
-            .catch(() => alert('Something went wrong, Please try again.'))
-            .finally(() => setSending(false));
+        .sendForm(
+            import.meta.env.VITE_SERVICE_ID, 
+            import.meta.env.VITE_TEMPLATE_ID, 
+            e.target, 
+            import.meta.env.VITE_PUBLIC_KEY
+        )
+        .then((result) => { //ON SEND
+            alert("Message Sent!");
+            setFormData({ name: "", email: "", message: "" });
+        })
+        .catch(()=> alert("Something went wrong, Please try again."))
+        .finally(() => setSending(false));
     };
 
     return(
