@@ -57,3 +57,4 @@ git clone https://github.com/amityst12/My-Portfolio.git
 cd My-Portfolio
 npm install
 npm run dev
+```
