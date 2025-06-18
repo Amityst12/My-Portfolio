@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
     const [darkMode, setDarkMode] = useState(() => {
-        return localStorage.getItem('theme') === 'dark';
+        const stored = localStorage.getItem('theme');
+        if (stored) {
+            return stored === 'dark';
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
 
     useEffect(() => {
@@ -39,9 +43,13 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     <button
                         onClick={() => setDarkMode(!darkMode)}
                         aria-label="Toggle theme"
-                        className="ml-4 text-xl text-black dark:text-yellow-200"
+                        className={`ml-4 w-12 h-6 flex items-center rounded-full p-1 transition-colors ${darkMode ? 'bg-yellow-400' : 'bg-gray-300'}`}
                     >
-                        {darkMode ? '☀️' : '🌙'}
+                        <span
+                            className={`w-4 h-4 bg-white rounded-full shadow transform transition-transform flex items-center justify-center text-[10px] ${darkMode ? 'translate-x-6' : ''}`}
+                        >
+                            {darkMode ? '☀️' : '🌙'}
+                        </span>
                     </button>
 
                     
