@@ -13,8 +13,13 @@
     <script>
       const saved = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
+      const useDark = saved === 'dark' || (!saved && prefersDark);
+      const meta = document.querySelector('meta[name="color-scheme"]');
+      if (useDark) {
         document.documentElement.classList.add('dark');
+        meta?.setAttribute('content', 'dark light');
+      } else {
+        meta?.setAttribute('content', 'light dark');
       }
     </script>
   </head>
