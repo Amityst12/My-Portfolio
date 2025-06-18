@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useTheme } from '../hooks/useTheme.js';
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
-    const [darkMode, setDarkMode] = useTheme();
+    const [darkMode, toggleTheme] = useTheme();
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -26,7 +26,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     </button>
 
                     <button
-                        onClick={() => setDarkMode(!darkMode)}
+                        onClick={toggleTheme}
                         aria-label="Toggle theme"
                         className={`ml-4 w-12 h-6 flex items-center rounded-full p-1 transition-colors ${darkMode ? 'bg-yellow-400' : 'bg-gray-300'}`}
                     >
