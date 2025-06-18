@@ -12,21 +12,22 @@ export const useTheme = () => {
   useEffect(() => {
     const classList = document.documentElement.classList;
     const meta = document.querySelector('meta[name="color-scheme"]');
+
     if (darkMode) {
       classList.add('dark');
-      meta?.setAttribute('content', 'dark light');
       localStorage.setItem('theme', 'dark');
+      meta?.setAttribute('content', 'dark light');
     } else {
       classList.remove('dark');
-      meta?.setAttribute('content', 'light dark');
       localStorage.setItem('theme', 'light');
+      meta?.setAttribute('content', 'light dark');
     }
   }, [darkMode]);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     const handle = (e) => {
-      if (localStorage.getItem('theme')) return;
+      if (localStorage.getItem('theme')) return; // Respect user's explicit choice
       setDarkMode(e.matches);
     };
     mq.addEventListener('change', handle);
