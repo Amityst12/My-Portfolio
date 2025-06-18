@@ -17,7 +17,7 @@ export const Projects = () => {
                         hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🤖 Self analyzing Discord bot:</h3>
-                    <p className="text-gray-400 mb-4 break-words">A Discord bot that fetches and analyzes personal TFT match data using Riot’s API.  
+                    <p className="text-gray-700 dark:text-gray-400 mb-4 break-words">A Discord bot that fetches and analyzes personal TFT match data using Riot’s API.
                         Built with Python and Requests for API integration, and leverages machine learning logic to detect patterns in player performance.  
                         Includes a user-friendly interface within Discord for real-time feedback, insights, and match history summaries.
                         </p>
@@ -47,7 +47,7 @@ export const Projects = () => {
                             hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🎮 2D shooting game:</h3>
-                    <p className="text-gray-400 mb-4 break-words">A 2D top-down shooter game built with Python and Pygame.  
+                    <p className="text-gray-700 dark:text-gray-400 mb-4 break-words">A 2D top-down shooter game built with Python and Pygame.
                         Designed using Object-Oriented Programming to manage player movement, enemy logic, bullet physics, and vector-based aiming.  
                         The game features custom UI elements, sprite animations, and responsive controls for a smooth arcade-style experience.
                     </p>
@@ -77,7 +77,7 @@ export const Projects = () => {
                             hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🖥 Portfolio website:</h3>
-                    <p className="text-gray-400 mb-4 break-words">A modern and responsive portfolio website built to showcase my skills, projects, and experience as a developer. Designed with a focus on clean aesthetics and smooth animations, the site highlights my proficiency in React, TailwindCSS, and integration with services like EmailJS.
+                    <p className="text-gray-700 dark:text-gray-400 mb-4 break-words">A modern and responsive portfolio website built to showcase my skills, projects, and experience as a developer. Designed with a focus on clean aesthetics and smooth animations, the site highlights my proficiency in React, TailwindCSS, and integration with services like EmailJS.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {["React", "TailwindCSS", "EmailJS", "JS","Vite" ].map((items,key)=>(
@@ -107,7 +107,7 @@ export const Projects = () => {
                     <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
                     💡 Promptify:
                     </h3>
-                    <p className="text-gray-400 mb-4 break-words">
+                    <p className="text-gray-700 dark:text-gray-400 mb-4 break-words">
                     A smart prompt enhancer web app that helps users turn simple or vague inputs into clear, structured, and detailed prompts for better AI results. Built with React and OpenAI API, Promptify features live prompt improvements, copy-to-clipboard, prompt history with local storage, and full responsiveness.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
