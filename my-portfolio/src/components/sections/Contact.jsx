@@ -45,40 +45,40 @@ export const Contact =() =>{
                     <form className="space-y-6"
                             onSubmit={handleSubmit}>
                         <div className="relative">
-                            <input 
+                            <input
                             type="text" name="name"
-                            id="name" required 
+                            id="name" required
                             autoComplete="name"
                             aria-label="Your Name"
                             value ={formData.name}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            className="w-full rounded bg-white border border-gray-300 text-gray-800 dark:bg-white/5 dark:border-white/10 dark:text-white px-4 py-3 transition focus:outline-none focus:border-blue-500 focus:bg-blue-50 dark:focus:bg-blue-500/5"
                             placeholder="Your name"
                             onChange ={(e) => setFormData({ ...formData, name: e.target.value})}/>
                         </div>
 
                         <div className="relative">
-                            <input 
+                            <input
                             type="email" name="email"
                             id="email" required
                             autoComplete="email"
                             aria-label="Your Email"
                             value ={formData.email}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            className="w-full rounded bg-white border border-gray-300 text-gray-800 dark:bg-white/5 dark:border-white/10 dark:text-white px-4 py-3 transition focus:outline-none focus:border-blue-500 focus:bg-blue-50 dark:focus:bg-blue-500/5"
                             placeholder="example@gmail.com"
                             onChange ={(e) => setFormData({ ...formData, email: e.target.value})}/>
                         </div>
 
                         <div className="relative">
                             <textarea
-                            id="message" 
+                            id="message"
                             name="message"
                             required
                             autoComplete="off"
                             aria-label="Your Message"
                             value ={formData.message}
                             rows={4}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                            placeholder="Your Message here"
+                            className="w-full rounded bg-white border border-gray-300 text-gray-800 dark:bg-white/5 dark:border-white/10 dark:text-white px-4 py-3 transition focus:outline-none focus:border-blue-500 focus:bg-blue-50 dark:focus:bg-blue-500/5"
+                            placeholder="Your message"
                             onChange ={(e) => setFormData({ ...formData, message: e.target.value})}/>
                         </div>
 

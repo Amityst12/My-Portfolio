@@ -19,7 +19,7 @@ export const Home = () => {
                     Hi, I'm Amit Yehoshaphat
                 </h1>
 
-                <p className="text-gray-100 text-lg max-w-2xl mx-auto text-center mb-8">
+                <p className="text-gray-700 dark:text-gray-100 text-lg max-w-2xl mx-auto text-center mb-8">
                     I'm a <span className="text-blue-400 font-semibold"> full-stack developer</span> and 
                     <span className="text-blue-400 font-semibold"> computer science student</span> who loves building 
                     <span className="text-blue-400 font-semibold"> impactful software</span>.
@@ -39,7 +39,7 @@ export const Home = () => {
                     <img
                         src={`${import.meta.env.BASE_URL}/mepic_retina_2048.png`}
                         alt="Amit Yehoshaphat – Profile"
-                        className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover rounded-full mx-auto mb-8 shadow-lg border border-white/24"
+                        className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover rounded-full mx-auto mb-8 shadow-lg border border-black/20 dark:border-white/24"
                         width="256"
                         height="256"
                     />  
