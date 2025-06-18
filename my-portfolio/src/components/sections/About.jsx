@@ -16,7 +16,7 @@ export const About = () =>{
                     Just a bit more:
                 </h2>
                 <div className="glass rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-                    <p className="text-gray-200 mb-5 text-3xl text-center font-bold">
+                    <p className="text-gray-700 dark:text-gray-200 mb-5 text-3xl text-center font-bold">
                         Less noise, more purpose — that's my motto.
                     </p>
 
@@ -108,7 +108,7 @@ export const About = () =>{
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                             <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
                                 <h3 className="text-xl font-bold mb-4">🎓Education:</h3>
-                                    <ul className="list-disc list-inside text-gray-300 space-y-2">
+                                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
                                         <li>
                                             <strong>Working towards B.Sc in Computer Science</strong> - Holon Institute of Technology (2023 - 2026)
                                         </li>
@@ -123,7 +123,7 @@ export const About = () =>{
 
                             <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
                                 <h3 className="text-xl font-bold mb-4">📂Experience:</h3>
-                                    <div className="space-y-4 text-gray-300">
+                                    <div className="space-y-4 text-gray-700 dark:text-gray-300">
                                         <div>
                                             <h4 className="font-bold"> Operational Digital Communication Specialist(2020 - Reserves)</h4>
                                             <p>

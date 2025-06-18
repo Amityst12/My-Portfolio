@@ -19,7 +19,7 @@ export const Home = () => {
                     Hi, I'm Amit Yehoshaphat
                 </h1>
 
-                <p className="text-gray-100 text-lg max-w-2xl mx-auto text-center mb-8">
+                <p className="text-gray-700 dark:text-gray-100 text-lg max-w-2xl mx-auto text-center mb-8">
                     I'm a <span className="text-blue-400 font-semibold"> full-stack developer</span> and 
                     <span className="text-blue-400 font-semibold"> computer science student</span> who loves building 
                     <span className="text-blue-400 font-semibold"> impactful software</span>.
