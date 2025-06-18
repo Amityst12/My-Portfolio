@@ -4,7 +4,7 @@ export const About = () =>{
 
     const frontendSkills = ["React", "JavaScript", "TailwindCSS","HTML"];
     const backendSkills = ["JSON","SQL","Basic Node.js","Python","Rest APIs","Emailjs"];
-    const otherSkills = ["GitHub","VS code","Deubgging","Problem Solving","Object-Oriented Programming"];
+    const otherSkills = ["GitHub","VS code","Debugging","Problem Solving","Object-Oriented Programming"];
     const Hobbies = ["Working out", "Reading","Gaming","Building","Overcoming challenges","Collecting"];
     const Courses = ["OOP", "Data Structures", "Data Systems","Data Science","C","OS","ML", "Computer Networking","Software Engineering"];
     
