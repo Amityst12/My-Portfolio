@@ -1,27 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useTheme } from '../hooks/useTheme.js';
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
-    const [darkMode, setDarkMode] = useState(() => {
-        const stored = localStorage.getItem('theme');
-        if (stored) {
-            return stored === 'dark';
-        }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    });
+    const [darkMode, setDarkMode] = useTheme();
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? "hidden" : "";
     }, [menuOpen]);
 
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    }, [darkMode]);
 
     return (
         <nav className="fixed top-0 w-full z-40 bg-white/80 dark:bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-black/10 dark:border-white/10 shadow-lg">
