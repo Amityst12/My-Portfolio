@@ -51,7 +51,7 @@ export const Contact =() =>{
                             autoComplete="name"
                             aria-label="Your Name"
                             value ={formData.name}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            className="w-full bg-black/5 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded px-4 py-3 text-gray-800 dark:text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                             placeholder="Your name"
                             onChange ={(e) => setFormData({ ...formData, name: e.target.value})}/>
                         </div>
@@ -63,7 +63,7 @@ export const Contact =() =>{
                             autoComplete="email"
                             aria-label="Your Email"
                             value ={formData.email}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            className="w-full bg-black/5 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded px-4 py-3 text-gray-800 dark:text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                             placeholder="example@gmail.com"
                             onChange ={(e) => setFormData({ ...formData, email: e.target.value})}/>
                         </div>
@@ -77,7 +77,7 @@ export const Contact =() =>{
                             aria-label="Your Message"
                             value ={formData.message}
                             rows={4}
-                            className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                            className="w-full bg-black/5 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded px-4 py-3 text-gray-800 dark:text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                             placeholder="Your Message here"
                             onChange ={(e) => setFormData({ ...formData, message: e.target.value})}/>
                         </div>
