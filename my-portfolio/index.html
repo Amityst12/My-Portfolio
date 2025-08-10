@@ -1,36 +1,84 @@
 <!doctype html>
-<html lang="en">
-  <!-- THIS IS THE MAIN CONFIG11--> 
+<html lang="en" dir="ltr">
   <head>
-    <!-- אימות מול גוגל -->
+    <!-- Verification -->
     <meta name="google-site-verification" content="gf7cEaGZLg9S_up8YWD0tNMRYqab8uA_eGS3arEg424" />
 
-      <!-- בסיס -->
+    <!-- Basics -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amit's Portfolio</title>
-    <meta name="description" content="פורטפוליו של עמית יהושפט – עבודות, טכנולוגיות, צור קשר." />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Amit Yehoshaphat" />
-    <meta name="keywords" content="Amit Yehoshaphat, פורטפוליו, מפתח אתרים, פרויקטים, React, JavaScript, עיצוב אתרים, GitHub, Frontend, Fullstack" />
-    <meta name="language" content="he-IL" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amit Yehoshaphat — Portfolio</title>
+    <link rel="canonical" href="https://amityst12.github.io/My-Portfolio/" />
 
-      <!-- Open Graph (לשיתוף ברשתות) -->
-    <meta property="og:title" content="Amit's Portfolio | פורטפוליו מקצועי" />
-    <meta property="og:description" content="העבודות והטכנולוגיות של עמית יהושפט. פרויקטי פיתוח, אתרים, קוד פתוח ועוד." />
+    <!-- SEO -->
+    <meta name="description" content="Portfolio of Amit Yehoshaphat — frontend-first full-stack developer. React + Tailwind, accessibility/RTL, Node/Python REST, SEO & performance." />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta http-equiv="Content-Language" content="en-US" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Amit Yehoshaphat — Portfolio" />
+    <meta property="og:title" content="Amit Yehoshaphat | Portfolio" />
+    <meta property="og:description" content="Frontend-first Full-Stack — React, Tailwind, Node/Python, SEO & performance." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://amityst12.github.io/My-Portfolio/" />
-    <meta property="og:image" content="https://yourdomain.com/your-image.png" />
-    <meta property="og:locale" content="he_IL" />
+    <meta property="og:image" content="https://amityst12.github.io/My-Portfolio/og-image.png" />
+    <meta property="og:image:alt" content="Preview of Amit Yehoshaphat's portfolio" />
+    <meta property="og:locale" content="en_US" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Amit Yehoshaphat | Portfolio" />
+    <meta name="twitter:description" content="Frontend-first Full-Stack — React, Tailwind, Node/Python, SEO & performance." />
+    <meta name="twitter:image" content="https://amityst12.github.io/My-Portfolio/og-image.png" />
+
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Fonts (performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+          media="print"
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" />
+    </noscript>
 
-    <title>Amit's Portfolio</title>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Amit Yehoshaphat",
+      "jobTitle": "Full-Stack Developer (Frontend-first)",
+      "url": "https://amityst12.github.io/My-Portfolio/",
+      "email": "mailto:amityst12@gmail.com",
+      "sameAs": [
+        "https://github.com/Amityst12",
+        "https://www.linkedin.com/in/amityehoshaphat"
+      ],
+      "knowsAbout": ["React","TailwindCSS","JavaScript","Node.js","Python","SEO","Accessibility","RTL","Vite","Base44"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Amit's Portfolio",
+      "url": "https://amityst12.github.io/My-Portfolio/"
+    }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
