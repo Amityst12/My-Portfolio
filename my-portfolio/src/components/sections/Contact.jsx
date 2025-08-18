@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Instagram, Globe, Linkedin, MessageCircle } from "lucide-react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
 
@@ -31,13 +32,22 @@ export const Contact = () => {
 
     if (!validate()) return;
 
+    // Validate required EmailJS env vars
+    const svc = import.meta.env.VITE_SERVICE_ID;
+    const tpl = import.meta.env.VITE_TEMPLATE_ID;
+    const key = import.meta.env.VITE_PUBLIC_KEY;
+    if (!svc || !tpl || !key) {
+      setStatus({ type: "error", text: "Email service is not configured. Please try again later." });
+      return;
+    }
+
     setSending(true);
     emailjs
       .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
+        svc,
+        tpl,
         e.target,
-        import.meta.env.VITE_PUBLIC_KEY
+        key
       )
       .then(() => {
         setStatus({ type: "success", text: "Thanks! Your message was sent." });
@@ -51,11 +61,26 @@ export const Contact = () => {
   const onChange = (key) => (ev) => setFormData((s) => ({ ...s, [key]: ev.target.value }));
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center -mt-20 py-16">
+  <section id="contact" className="relative min-h-screen flex items-center justify-center py-20 scroll-mt-20">
+      {/* Full-bleed background image with gradient overlay (matches Home/About) */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none z-0" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1B0D28]/80 via-[#1B0D28]/60 to-[#1B0D28]/80"></div>
+      </div>
+  {/* Top fade to blend from previous section */}
+  <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#1B0D28] via-[#1B0D28]/70 to-transparent z-0" aria-hidden="true" />
+      {/* Subtle bottom fade to smooth transition into next section */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#1B0D28]/70 to-[#1B0D28] z-0" aria-hidden="true" />
       <RevealOnScroll>
         {/* wider container */}
-        <div className="w-full max-w-2xl px-4">
-          <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
+        <div className="relative z-10 w-full max-w-2xl px-3 sm:px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
             Get in touch now!
           </h2>
 
@@ -72,6 +97,46 @@ export const Contact = () => {
               {status.text}
             </div>
           )}
+
+          {/* Social links */}
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <a
+              href="https://www.instagram.com/amitweb1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-sm text-gray-200 hover:border-blue-500/40 hover:bg-blue-500/10 hover:-translate-y-0.5 transition"
+              aria-label="Instagram"
+            >
+              <Instagram size={18} /> Instagram
+            </a>
+            <a
+              href="https://amitweb.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-sm text-gray-200 hover:border-blue-500/40 hover:bg-blue-500/10 hover:-translate-y-0.5 transition"
+              aria-label="AmitWeb website"
+            >
+              <Globe size={18} /> amitweb.com
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=972502227134"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-sm text-gray-200 hover:border-blue-500/40 hover:bg-blue-500/10 hover:-translate-y-0.5 transition"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={18} /> WhatsApp
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amityehoshaphat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-sm text-gray-200 hover:border-blue-500/40 hover:bg-blue-500/10 hover:-translate-y-0.5 transition"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} /> LinkedIn
+            </a>
+          </div>
 
           <form className="space-y-4" onSubmit={handleSubmit} noValidate>
             {/* Honeypot (hidden) */}

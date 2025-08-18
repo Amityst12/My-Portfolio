@@ -1,4 +1,4 @@
-import { useEffect, useState, Suspense, lazy } from "react";
+import { useEffect, useState, useRef, Suspense, lazy } from "react";
 import "./App.css";
 import "./index.css";
 import { LoadingScreen } from "./components/LoadingScreen.jsx";
@@ -16,6 +16,9 @@ const Projects = lazy(() =>
 const Contact = lazy(() =>
   import("./components/sections/Contact.jsx").then((m) => ({ default: m.Contact }))
 );
+const Amitweb = lazy(() =>
+  import("./components/sections/Amitweb.jsx").then((m) => ({ default: m.Amitweb }))
+);
 
 // Minimal skeleton for lazy sections
 const SectionSkeleton = () => (
@@ -25,6 +28,7 @@ const SectionSkeleton = () => (
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const loadStartRef = useRef(0);
 
   // Close mobile menu with Esc
   useEffect(() => {
@@ -33,9 +37,50 @@ function App() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Reduce LCP: skip loading screen for reduced motion, or hide on hero image first paint
+  useEffect(() => {
+    // prefers-reduced-motion: disable loading overlay entirely
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      setIsLoaded(true);
+      return;
+    }
+
+    // If already loaded, no-op
+    if (isLoaded) return;
+
+    // Mark loader start time to enforce minimum display duration
+    if (!loadStartRef.current) loadStartRef.current = performance.now();
+
+    let done = false;
+    const finish = () => {
+      if (done) return; done = true;
+      const elapsed = performance.now() - loadStartRef.current;
+      const minMs = 2000; // enforce 1s minimum display time
+      const wait = Math.max(minMs - elapsed, 0);
+      setTimeout(() => setIsLoaded(true), wait);
+    };
+
+    // Try to hide when hero avatar finishes loading
+    const img = document.getElementById('hero-avatar');
+    if (img) {
+      if (img.complete) {
+        // Let the browser paint once before removing overlay
+        requestAnimationFrame(finish);
+      } else {
+        img.addEventListener('load', () => requestAnimationFrame(finish), { once: true });
+        img.addEventListener('error', () => setTimeout(finish, 800), { once: true });
+      }
+    }
+
+    // Fallback cap so we never block longer than 1500ms
+  const t = setTimeout(finish, 1500);
+    return () => clearTimeout(t);
+  }, [isLoaded]);
+
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
+  {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
 
       {/* Skip link for accessibility */}
       <a
@@ -60,6 +105,9 @@ function App() {
           <Home />
           <Suspense fallback={<SectionSkeleton />}>
             <About />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton />}>
+            <Amitweb />
           </Suspense>
           <Suspense fallback={<SectionSkeleton />}>
             <Projects />

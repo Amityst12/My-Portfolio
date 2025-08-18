@@ -4,6 +4,13 @@ export const RevealOnScroll = ({ children }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    // If reduced motion is preferred, show immediately without observers
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      if (ref.current) ref.current.classList.add('visible');
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

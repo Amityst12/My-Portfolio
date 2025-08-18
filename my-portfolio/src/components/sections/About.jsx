@@ -31,11 +31,28 @@ const courses        = [
 export const About = () => {
   return (
     <section id="about" aria-labelledby="about-title"
-      className="min-h-screen flex items-center justify-center py-20">
+      className="relative min-h-screen flex items-center justify-center py-20 scroll-mt-20">
+      {/* Full-bleed background image with gradient overlay (matches Home) */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none z-0" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1755095901325-637deba5b2b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1B0D28]/80 via-[#1B0D28]/60 to-[#1B0D28]/80"></div>
+      </div>
+  {/* Top fade to blend from previous section */}
+  <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#1B0D28] via-[#1B0D28]/70 to-transparent z-0" aria-hidden="true" />
+      {/* Decorative accent circle (requested) */}
+      <div className="pointer-events-none absolute -bottom-6 -right-6 w-16 h-16 bg-gradient-to-r from-[#2FE6DE] to-[#59E3FF] rounded-full opacity-80 z-0" aria-hidden="true"></div>
+      {/* Subtle bottom fade to smooth transition into next section (matches Home) */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#1B0D28]/70 to-[#1B0D28] z-0" aria-hidden="true" />
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 id="about-title"
-              className="text-4xl md:text-5xl font-extrabold mb-8
+  <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4">
+      <h2 id="about-title"
+        className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-8
                          bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent
                          text-center">
             Just a bit more
@@ -49,7 +66,7 @@ export const About = () => {
           </div>
 
           {/* Skills & Courses & Hobbies */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 sm:mt-8">
             <div className="rounded-xl p-6 border border-white/10 hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4">Frontend</h3>
               <div className="flex flex-wrap gap-2">

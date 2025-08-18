@@ -6,10 +6,16 @@ html,body{
   font-family: "Space Grotesk", sans-serif;
   background: #0a0a0a;
   scroll-behavior: smooth;
-  color: #f3f4f6
+  color: #f3f4f6;
+  overflow-x: hidden;
 }
 
 @layer utilities{
+  /* Safe-area insets for mobile browsers with notches */
+  .pt-safe { padding-top: max(1rem, env(safe-area-inset-top)); }
+  .pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .px-safe { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+
   @keyframes blink {
     0%, 100%{
       opacity:1;
@@ -37,6 +43,24 @@ html,body{
   .animate-loading-bar{
     animation: loading 1.4s ease infinite;
   }
+
+  /* Indeterminate progress (Material-like) */
+  @keyframes indeterminate-1 {
+    0%   { left: -35%; right: 100%; }
+    60%  { left: 100%; right: -90%; }
+    100% { left: 100%; right: -90%; }
+  }
+  @keyframes indeterminate-2 {
+    0%   { left: -200%; right: 100%; }
+    60%  { left: 107%; right: -8%; }
+    100% { left: 107%; right: -8%; }
+  }
+  .animate-indeterminate-1 {
+    animation: indeterminate-1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  }
+  .animate-indeterminate-2 {
+    animation: indeterminate-2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
+  }
 }
 
 .reveal{
@@ -56,4 +80,18 @@ html,body{
   opacity:1;
   filter: blur(0px);
   transform : translateX(0) scale(1) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.visible {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  /* Neutralize hover animations */
+  .hover\:-translate-y-0\.5 { transform: none !important; }
+  .transition, .transition-all, .transition-colors, .transition-transform { transition: none !important; }
+  /* Neutralize indeterminate progress animations */
+  .animate-indeterminate-1, .animate-indeterminate-2 { animation: none !important; }
 }

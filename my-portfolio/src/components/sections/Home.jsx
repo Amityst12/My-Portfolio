@@ -7,14 +7,33 @@ export const Home = () => {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="pt-20 min-h-screen flex items-center justify-center relative"
+      className="pt-20 min-h-screen flex items-center justify-center relative scroll-mt-20"
     >
+      {/* Full-bleed background image with gradient overlay */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none z-0" aria-hidden="true">
+        <img 
+          src="https://images.unsplash.com/photo-1722811087953-b745cf16a0c1?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1B0D28]/80 via-[#1B0D28]/60 to-[#1B0D28]/80"></div>
+      </div>
+      {/* Top fade to blend from previous section */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#1B0D28] via-[#1B0D28]/70 to-transparent z-0"
+        aria-hidden="true"
+      />
+      {/* Subtle bottom fade to smooth transition into next section */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#1B0D28]/70 to-[#1B0D28] z-0"
+        aria-hidden="true"
+      />
       <RevealOnScroll>
-        <div className="text-center z-10 px-4 max-w-3xl mx-auto">
+  <div className="text-center z-10 px-3 sm:px-4 max-w-3xl mx-auto">
           {/* Title */}
           <h1
             id="hero-title"
-            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 
+            className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 
                        bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent 
                        leading-tight break-words text-center w-full px-2"
           >
@@ -33,7 +52,7 @@ export const Home = () => {
 
           {/* AmitWeb (side business) */}
           <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto text-center mb-8">
-            I also run <span className="text-blue-400 font-semibold">AmitWeb</span> — a side business where I build fast, SEO-ready websites using <span className="font-semibold text-blue-300">React</span> and <span className="font-semibold text-blue-300">AI</span>.
+            I also run <span className="text-blue-400 font-semibold">AmitWeb</span> — as a freelancer, I build fast, SEO-ready websites using <span className="font-semibold text-blue-300">React</span> and <span className="font-semibold text-blue-300">AI</span>.
           </p>
 
           {/* Quick badges */}
@@ -61,6 +80,7 @@ export const Home = () => {
                 type="image/png"
               />
               <img
+                id="hero-avatar"
                 src={`${base}/mepic_retina_2048.png`}
                 alt="Amit Yehoshaphat – Profile"
                 className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover rounded-full mx-auto mb-8 shadow-lg border border-white/24"
@@ -73,7 +93,7 @@ export const Home = () => {
           </RevealOnScroll>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 px-1">
             <a
               href="#projects"
               className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden 

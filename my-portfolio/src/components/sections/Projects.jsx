@@ -2,18 +2,33 @@ import { RevealOnScroll } from "../RevealOnScroll";
 export const Projects = () => {
     return(
     <section id="projects"
-             className="min-h-screen flex items-center justify-center py-15">
+             className="relative min-h-screen flex items-center justify-center py-20 scroll-mt-20">
+        {/* Full-bleed background image with gradient overlay (matches Home/About) */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none z-0" aria-hidden="true">
+            <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1B0D28]/80 via-[#1B0D28]/60 to-[#1B0D28]/80"></div>
+        </div>
+    {/* Top fade to blend from previous section */}
+    <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#1B0D28] via-[#1B0D28]/70 to-transparent z-0" aria-hidden="true" />
+        {/* Subtle bottom fade to smooth transition into next section */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#1B0D28]/70 to-[#1B0D28] z-0" aria-hidden="true" />
         <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4 ">
+        <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 ">
             <h2 
-            className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-center">
             Featured Projects:
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 
                 {/*Projects: */ }
                 
-                <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
+                <div className="group p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
                         hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🤖 Self analyzing Discord bot:</h3>
@@ -43,7 +58,7 @@ export const Projects = () => {
                 </div>
 
 
-                <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
+                <div className="group p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
                             hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🎮 2D shooting game:</h3>
@@ -73,7 +88,7 @@ export const Projects = () => {
                 </div>
                     
 
-                <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
+                <div className="group p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
                             hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🖥 Portfolio website:</h3>
@@ -101,7 +116,7 @@ export const Projects = () => {
                 </div>
 
 
-                <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
+                <div className="group p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 
                                 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-300">
                 <RevealOnScroll>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
